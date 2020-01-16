@@ -1,3 +1,9 @@
-import { add } from './src/math';
+import express from 'express';
+import router from './routes';
 
-console.log(`1 + 2 = ${add(1, 2)}`);
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use('/', router);
+
+app.listen(port);
